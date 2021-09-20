@@ -11,5 +11,8 @@ mkdir -p $launcherpath
 #Create the launcherpath.txt file so Subnautica can locate and load Nitrox
 echo $(dirname $(readlink -f $0)) > $launcherpath/launcherpath.txt
 
+#Create path.exe and put Subnautica's path into it (removes a step in the Nitrox Launcher)
+echo ~/.steam/steam/steamapps/common/Subnautica > $(dirname $(readlink -f $0))/path.txt
+
 #Start the Nitrox Launcher with Proton
 ~/.steam/steam/steamapps/common/Proton\ 6.3/proton run NitroxLauncher.exe
