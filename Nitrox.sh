@@ -14,5 +14,14 @@ echo $(dirname $(readlink -f $0)) > $launcherpath/launcherpath.txt
 #Create path.exe and put Subnautica's path into it (removes a step in the Nitrox Launcher)
 echo ~/.steam/steam/steamapps/common/Subnautica > $(dirname $(readlink -f $0))/path.txt
 
+
 #Start the Nitrox Launcher with Proton
-~/.steam/steam/steamapps/common/Proton\ 6.3/proton run NitroxLauncher.exe
+~/.steam/steam/steamapps/common/Proton\ 6.3/proton run NitroxLauncher.exe || proton=1
+
+if [[ $proton == 1 ]]; then
+  xdg-open steam://install/1580130
+  sleep 1
+  echo -e "\e[31mProton 6.3 Not Found. Install it to the default steam directory\nPress any key when it finishes downloading\e[0m"
+  read -n 1 -s -r -p ""
+  ~/.steam/steam/steamapps/common/Proton\ 6.3/proton run NitroxLauncher.exe
+fi
