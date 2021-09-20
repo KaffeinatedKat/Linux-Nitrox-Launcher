@@ -18,6 +18,7 @@ echo ~/.steam/steam/steamapps/common/Subnautica > $(dirname $(readlink -f $0))/p
 #Start the Nitrox Launcher with Proton
 ~/.steam/steam/steamapps/common/Proton\ 6.3/proton run NitroxLauncher.exe || proton=1
 
+#If the above command failed prompt user to install Proton 6.3
 if [[ $proton == 1 ]]; then
   xdg-open steam://install/1580130
   sleep 1
