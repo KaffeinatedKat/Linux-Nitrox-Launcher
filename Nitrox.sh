@@ -1,5 +1,5 @@
 #Clone Subnautica's Compatdata path for Nitrox to run in
-cp -r ~/.local/share/Steam/steamapps/compatdata/264710 ~/.local/share/Steam/steamapps/compatdata/NitroxLauncher || echo -e "\e[31mPlease install Subnautica in the deafult steam directory and run it at least once\e[0m" && exit 1
+cp -r ~/.local/share/Steam/steamapps/compatdata/264710 ~/.local/share/Steam/steamapps/compatdata/NitroxLauncher
 
 export STEAM_COMPAT_DATA_PATH=~/.local/share/Steam/steamapps/compatdata/NitroxLauncher
 export STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam
